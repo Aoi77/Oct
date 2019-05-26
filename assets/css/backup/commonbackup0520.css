@@ -1,0 +1,388 @@
+@charset "UTF-8";
+
+/*==========general==========*/
+body {
+    font-size: 1.6rem;
+    min-width: 320px;
+}
+
+/*==========general end==========*/
+
+
+
+/*========================================*/
+/*----------body内ここから----------*/
+/*========================================*/
+
+/*==========#wrapper==========*/
+#wrapper {
+    width: 100%;
+}
+
+/*==========#wrapper end==========*/
+
+
+/*========================================*/
+/*----------headerここから----------*/
+/*========================================*/
+
+header {
+    width: 100%;
+    z-index: 7;
+    position: absolute;
+}
+
+/*----------headerContainer----------*/
+#headerContainer {
+    width: 100%;
+    max-width: 1920px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+}
+
+#headerContainer h1 {
+    width: 15%;
+    text-align: center;
+    margin: auto;
+    padding: 10px
+}
+
+#headerContainer h1 img {
+    max-width: 167px;
+    width: 100%;
+    vertical-align: middle;
+}
+
+/*----------ナビゲーション部分----------*/
+#headerContainer nav {
+    width: 80%;
+}
+
+#headerContainer nav ul {
+    width: 100%;
+    text-align: right;
+    margin-right: 3%;
+}
+
+#headerContainer nav ul li {
+    display: inline-block;
+    padding: 0 1%;
+    font-size: 1rem;
+    transition: .5s;
+}
+#headerContainer nav ul li:hover a{
+    color: #26525e;
+}
+#headerContainer #menuIcon {
+    display: none;
+}
+
+/*========================================*/
+/*----------headerここまで----------*/
+/*========================================*/
+
+
+
+/*========================================*/
+/*----------#main エリアここから----------*/
+/*========================================*/
+
+#main {
+    width: 100%;
+}
+
+/*---------- #mainContainer ----------*/
+#mainContainer {
+    max-width: 1920px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/*---------- #mainVisual ----------*/
+#mainVisual {
+    width: 100%;
+    position: relative;
+    z-index: 6;
+}
+
+
+#mainVisual .mvImage {
+    width: 100%;
+}
+
+#mainVisual .mvImage img {
+    width: 100%;
+}
+
+/*==========メインビジュアルの高さをあわせる設定 使用中==========*/
+#mainVisual .mvImage img {
+    width: 100vw;
+    max-width: 1920px;
+    min-height: 400px;
+    height: 100vh;
+    object-fit: cover;
+    object-position: center top;
+}
+
+/*==========メインビジュアルの高さをあわせる設定 使用中 不具合でたらここをコメアウトすること==========*/
+
+
+
+/*====================*/
+/*手書き文字アニメーション部分*/
+/*====================*/
+
+/*--------------------*/
+/*大きさ調整*/
+/*--------------------*/
+#signature {
+    width: 30%;
+    position: absolute;
+    top: 45%;
+    left: 35%;
+}
+
+
+/*--------------------*/
+/*マスク部分の設定*/
+/*--------------------*/
+#signature svg {
+    filter: drop-shadow(0px 2px 2px #333);
+}
+
+#logoSignature {
+    fill: #fff;
+    stroke: #fff;
+}
+
+#logo-mask .cls-1 {
+    fill: none;
+    stroke: #fff;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 15px;
+    /*---------- マスクの線の太さ ----------*/
+    stroke-dasharray: 2000;
+    /*---------- マスクの線の長さ ----------*/
+    stroke-dashoffset: 2000;
+    /*---------- マスクの線の開始地点 ----------*/
+    animation: logo_anime 1.7s ease-in forwards;
+    /*---------- 何秒掛けてアニメーションするか ----------*/
+    animation-delay: .5s;
+    /*---------- 何秒経ったら開始するか ----------*/
+}
+
+/*--------------------*/
+/*アニメーション定義部分*/
+/*--------------------*/
+@keyframes logo_anime {
+    0% {
+        stroke-dashoffset: 2000;
+        /*---------- stroke-dasharray/stroke-dashoffsetと数値をあわせる ----------*/
+    }
+
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+/*====================*/
+/*手書き文字アニメーションend*/
+/*====================*/
+
+
+/*==========#mainvisualText==========*/
+#mainvisualText {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    color: #fff;
+    text-shadow: 0px 2px 2px #333;
+    font-size: 1rem;
+    letter-spacing: 2px;
+}
+
+/*----------#mainVisualここまで----------*/
+
+
+
+/*----------#banners----------*/
+#banners {
+    width: 95%;
+    margin: 15px auto 50px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#banners p {
+    width: 100%;
+    flex-basis: 33%;
+}
+#banners p:hover {
+    opacity: 0.7;
+}
+#banners p img {
+    width: 100%;
+}
+
+/*----------#bannersここまで----------*/
+
+
+/*----------#shares----------*/
+#shares {
+    width: 15%;
+    margin: 25px auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+#shares i {
+    font-size: 3rem;
+}
+#shares i:hover {
+    color: #26525e;
+}
+
+/*----------#sharesここまで----------*/
+
+
+/*========================================*/
+/*----------#mainエリアここまで----------*/
+/*========================================*/
+
+
+/*========================================*/
+/*----------footerここから----------*/
+/*========================================*/
+
+footer {
+    width: 100%;
+    margin-top: 50px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    background-color: #000516;
+    color: #fff;
+}
+
+/*----------#footerContainer----------*/
+#footerContainer {
+    width: 70%;
+    max-width: 1920px;
+    margin: 0 auto;
+}
+
+#footerContainer p {
+    width: 100%;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+/*========================================*/
+/*----------footerここまで----------*/
+/*========================================*/
+
+
+
+/*========================================*/
+/*----------メディアクエリ設定 max-width480px----------*/
+/*========================================*/
+
+@media screen and (max-width: 480px) {
+
+
+    /*====================*/
+    /*----- header -----*/
+    /*====================*/
+    header {
+        /*position: relative;*/
+    }
+
+    #headerContainer #menuIcon {
+        /*---------- ハンバーガー表示 ----------*/
+        display: block;
+        background-color: transparent;
+        border-color: transparent;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        z-index: 10;
+        font-size: 2rem;
+    }
+
+    #headerContainer h1 {
+        width: 30%;
+        margin: 0;
+        padding-top: 10px;
+    }
+
+    #headerContainer h1 img {
+        vertical-align: top;
+    }
+
+    #headerContainer nav {
+        display: none;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        z-index: 9;
+        top: 0;
+        right: 0;
+        background: rgba(255, 255, 255, 0.9);
+    }
+
+    #headerContainer nav ul li {
+        width: 50%;
+        margin: 5% auto;
+        display: block;
+        text-align: center;
+        font-size: 1.4rem;
+    }
+
+    /*====================*/
+    /*-----mainVisual #signature -----*/
+    /*====================*/
+    #signature {
+        width: 60%;
+        position: absolute;
+        top: 50%;
+        left: 20%;
+    }
+
+
+    /*====================*/
+    /*----- banners -----*/
+    /*====================*/
+
+    #banners {
+        display: block;
+        margin: 15px auto;
+    }
+
+    #banners p {
+        margin-top: 10px;
+    }
+
+    /*====================*/
+    /*----- shares -----*/
+    /*====================*/
+
+    #shares {
+        width: 40%;
+    }
+
+}
+
+/*========================================*/
+/*----------メディアクエリmax-width480pxここまで----------*/
+/*========================================*/
+
+
+/*==========ハンバーガー対策==========*/
+@media screen and (min-width: 500px) {
+    #headerContainer nav {
+        display: block !important;
+    }
+}
+
+/*==========ハンバーガー対策==========*/

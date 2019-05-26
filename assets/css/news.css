@@ -1,0 +1,393 @@
+@charset "UTF-8";
+
+/*========================================*/
+/*----------#main部分余白と広さの設定と見出し設定----------*/
+/*========================================*/
+
+#main {
+    padding-top: 50px;
+}
+
+#mainContainer {
+    width: 95%;
+}
+
+#mainContainer h2 {
+    font-size: 3.4rem;
+    margin-bottom: 20px
+}
+
+/*========================================*/
+/*----------#news ここから----------*/
+/*========================================*/
+
+
+
+/*==========グリッド内設定==========*/
+/*----------グリッドアイテムの枠設定----------*/
+#newsGrid .newsItem {
+    position: relative;
+    padding: 1%;
+    border-bottom: 1px solid #6094bb;
+    color: #6094bb;
+    transition: .2s;
+    word-break: break-all;
+    line-height: 1.5;
+    letter-spacing: 1.5px;
+    margin: 30px auto;
+}
+
+/*----------グリッドタイトル設定 通常非表示----------*/
+#newsGrid .newsItem .newsTitle {
+    font-size: 3rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    z-index: 10;
+}
+
+/*----------グリッド内テキスト設定----------*/
+#newsGrid .newsItem .newsText {
+    font-size: 1.4rem;
+}
+
+/*---------- グリッド内画像の大きさ指定 ----------*/
+.newsItem img {
+    width: 100%;
+}
+
+
+/*==========hover時の設定==========*/
+#newsGrid .newsItem:hover {
+    background-color: #6094BB;
+    color: #222;
+}
+
+#newsGrid .newsItem:hover .newsTitle {
+    opacity: 1;
+    color: #fff;
+    font-weight: bold;
+    /*----------リンククリック出来る設定----------*/
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+/*==========#sharesマージン設定==========*/
+
+#shares {
+    margin: 20px auto 0;
+}
+
+/*========================================*/
+/*----------グリッド用メディアクエリ320px以上----------*/
+/*========================================*/
+
+@media screen and (min-width: 320px) {
+    #newsGrid {
+        display: block;
+    }
+}
+
+/*========================================*/
+/*----------グリッド用メディアクエリ481px以上----------*/
+/*========================================*/
+
+@media screen and (min-width: 481px) {
+
+    /*==========gridレイアウト大枠==========*/
+
+    #newsGrid {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(10, 1fr);
+        grid-gap: 20px 2%;
+        height: 100%;
+        margin-bottom: 50px;
+    }
+
+    #newsGrid .newsItem {
+        margin: 0;
+        border: 1px solid #6094bb;
+        min-height: 50px;
+    }
+
+    /*========================================*/
+    /*----------各ニュース設定----------*/
+    /*========================================*/
+    .news2 {
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 1;
+        grid-row-end: 3;
+    }
+
+    .news3 {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 2;
+        grid-row-end: 4;
+    }
+
+    .news5 {
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 4;
+        grid-row-end: 6;
+    }
+
+    .news10 {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 6;
+        grid-row-end: 8;
+    }
+
+    .news14 {
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 8;
+        grid-row-end: 10;
+    }
+
+}
+
+/*========================================*/
+/*----------タブレット以下グリッド用メディアクエリ481px以上----------*/
+/*========================================*/
+
+@media screen and (min-width: 601px) {
+    #newsGrid .newsItem {
+        min-height: 100px;
+    }
+
+    /*----------グリッド内テキスト設定----------*/
+    #newsGrid .newsItem .newsText {
+        position: relative;
+        top: 45%;
+        transform: translateY(-50%);
+    }
+}
+
+/*========================================*/
+/*----------PC表示(小)グリッド用メディアクエリ769px以上----------*/
+/*========================================*/
+@media screen and (min-width: 769px) {
+
+    /*==========gridレイアウト大枠==========*/
+
+    #newsGrid {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: repeat(8, 1fr);
+    }
+
+    /*========================================*/
+    /*----------各ニュース設定----------*/
+    /*========================================*/
+    .news2 {
+        grid-column-start: 3;
+        grid-column-end: 5;
+        grid-row-start: 1;
+        grid-row-end: 4;
+    }
+
+    .news3 {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 2;
+        grid-row-end: 5;
+    }
+
+    .news5 {
+        grid-column-start: 3;
+        grid-column-end: 5;
+        grid-row-start: 4;
+        grid-row-end: 5;
+    }
+
+    .news10 {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 6;
+        grid-row-end: 9;
+    }
+
+    .news14 {
+        grid-column-start: 3;
+        grid-column-end: 5;
+        grid-row-start: 7;
+        grid-row-end: 8;
+    }
+
+}
+
+/*========================================*/
+/*----------PC表示(中)グリッド用メディアクエリ1001px以上----------*/
+/*========================================*/
+@media screen and (min-width: 1001px) {
+
+    /*==========gridレイアウト大枠==========*/
+    #newsGrid {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: repeat(9, 1fr);
+    }
+
+
+    /*========================================*/
+    /*----------各ニュース設定----------*/
+    /*========================================*/
+    .news2 {
+        grid-column-start: 3;
+        grid-column-end: 5;
+        grid-row-start: 1;
+        grid-row-end: 4;
+    }
+
+    .news3 {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 2;
+        grid-row-end: 5;
+    }
+
+    .news5 {
+        grid-column-start: 2;
+        grid-column-end: 5;
+        grid-row-start: 5;
+        grid-row-end: 7;
+    }
+
+    .news10 {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 7;
+        grid-row-end: 10;
+    }
+}
+
+/*========================================*/
+/*----------PC表示グリッド用メディアクエリ1201px以上----------*/
+/*========================================*/
+@media screen and (min-width: 1201px) {
+
+    /*==========gridレイアウト大枠==========*/
+
+    #newsGrid {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: repeat(11, 1fr);
+    }
+
+    /*========================================*/
+    /*----------各ニュース設定----------*/
+    /*========================================*/
+    .news2 {
+        grid-column-start: 3;
+        grid-column-end: 5;
+        grid-row-start: 1;
+        grid-row-end: 5;
+    }
+
+    .news3 {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 2;
+        grid-row-end: 6;
+    }
+
+    .news5 {
+        grid-column-start: 2;
+        grid-column-end: 5;
+        grid-row-start: 6;
+        grid-row-end: 8;
+    }
+
+    .news10 {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 8;
+        grid-row-end: 12;
+    }
+
+    .news14 {
+        grid-column-start: 3;
+        grid-column-end: 5;
+        grid-row-start: 10;
+        grid-row-end: 12;
+    }
+
+}
+
+/*========================================*/
+/*----------PC表示グリッド用メディアクエリ1600px以上----------*/
+/*========================================*/
+@media screen and (min-width: 1600px) {
+
+    /*==========gridレイアウト大枠==========*/
+
+    #newsGrid {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: repeat(12, 1fr);
+    }
+
+    /*========================================*/
+    /*----------各ニュース設定----------*/
+    /*========================================*/
+    .news2 {
+        grid-column-start: 3;
+        grid-column-end: 5;
+        grid-row-start: 1;
+        grid-row-end: 6;
+    }
+
+    .news3 {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 2;
+        grid-row-end: 7;
+    }
+
+    .news5 {
+        grid-column-start: 3;
+        grid-column-end: 5;
+        grid-row-start: 6;
+        grid-row-end: 8;
+    }
+
+    .news10 {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 8;
+        grid-row-end: 13;
+    }
+
+    .news14 {
+        grid-column-start: 3;
+        grid-column-end: 5;
+        grid-row-start: 10;
+        grid-row-end: 12;
+    }
+
+}
+
+/*========================================*/
+/*----------IE用非グリッドレイアウト表示----------*/
+/*========================================*/
+
+@media all and (-ms-high-contrast: none) {
+    
+    #newsGrid {
+        display: block;
+    }
+    
+    #newsGrid .newsItem .newsText {
+        position:  relative;
+        transform: translateY(0);
+    }
+}

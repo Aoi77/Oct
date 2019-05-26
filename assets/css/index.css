@@ -1,0 +1,280 @@
+@charset "UTF-8";
+
+/*==========general==========*/
+body {
+    font-size: 1.6rem;
+    min-width: 320px;
+    overflow-x: hidden;
+}
+
+/*==========general end==========*/
+
+/*====================*/
+/*-----#headerのabsolute設定-----*/
+/*====================*/
+header {
+    width: 100%;
+    z-index: 7;
+    position: absolute;
+}
+
+
+/*========================================*/
+/*----------#main エリアここから----------*/
+/*========================================*/
+
+#main {
+    width: 100%;
+}
+
+/*---------- #mainContainer ----------*/
+#mainContainer {
+    max-width: 1920px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/*---------- #mainVisual ----------*/
+#mainVisual {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    z-index: 6;
+    max-width: 1920px;
+    min-height: 400px;
+    background: url(../images/home/mainVisual2.jpg) center top;
+    background-size: cover;
+    /*==========IEでのTOP縦横比バグの対処のためメインビジュアルはバックグラウンドで指定==========*/
+}
+
+
+#mainVisual .mvImage {
+    width: 100%;
+}
+
+#mainVisual .mvImage img {
+    width: 100%;
+}
+
+/*====================*/
+/*手書き文字アニメーション部分*/
+/*====================*/
+
+/*--------------------*/
+/*大きさ調整*/
+/*--------------------*/
+#signature {
+    width: 30%;
+    position: absolute;
+    top: 40%;
+    left: 35%;
+}
+
+
+/*--------------------*/
+/*マスク部分の設定*/
+/*--------------------*/
+#signature svg {
+    filter: drop-shadow(0px 2px 2px #333);
+}
+
+#logoSignature {
+    fill: #fff;
+    stroke: #fff;
+}
+
+#logo-mask .cls-1 {
+    fill: none;
+    stroke: #fff;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 15px;
+    /*---------- マスクの線の太さ ----------*/
+    stroke-dasharray: 2000;
+    /*---------- マスクの線の長さ ----------*/
+    stroke-dashoffset: 2000;
+    /*---------- マスクの線の開始地点 ----------*/
+    animation: logo_anime 1.7s ease-in forwards;
+    /*---------- 何秒掛けてアニメーションするか ----------*/
+    animation-delay: .5s;
+    /*---------- 何秒経ったら開始するか ----------*/
+}
+
+/*--------------------*/
+/*手書き文字アニメーション定義部分*/
+/*--------------------*/
+@keyframes logo_anime {
+    0% {
+        stroke-dashoffset: 2000;
+        /*---------- stroke-dasharray/stroke-dashoffsetと数値をあわせる ----------*/
+    }
+
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+/*====================*/
+/*手書き文字アニメーションここまで*/
+/*====================*/
+
+
+
+
+
+
+/*==========#mainvisualText==========*/
+#mainvisualText {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    color: #fff;
+    text-shadow: 0px 2px 2px #333;
+    letter-spacing: 2px;
+}
+
+#mainvisualText .conversion {
+    margin-top: 20px;
+    /*----------768px以上では非表示----------*/
+}
+#mainvisualText .conversion a{
+}
+
+/*====================*/
+/*-----768以下時の.conversion出現アニメーション定義-----*/
+/*====================*/
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0
+    }
+
+    80% {
+        opacity: 0
+    }
+
+    100% {
+        opacity: 1
+    }
+}
+
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity: 0
+    }
+
+    80% {
+        opacity: 0
+    }
+
+    100% {
+        opacity: 1
+    }
+}
+
+/*====================*/
+/*-----768以下時の.conversion出現アニメーション定義ここまで-----*/
+/*====================*/
+
+
+
+/*----------#mainVisualここまで----------*/
+
+
+
+/*----------#banners----------*/
+#banners {
+    width: 95%;
+    margin: 15px auto 50px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#banners p {
+    width: 100%;
+    flex-basis: 33%;
+}
+
+#banners p:hover {
+    opacity: 0.7;
+}
+
+#banners p img {
+    width: 100%;
+}
+
+/*----------#bannersここまで----------*/
+
+
+/*========================================*/
+/*----------#mainエリアここまで----------*/
+/*========================================*/
+
+
+/*========================================*/
+/*----------メディアクエリ設定 max-width480px----------*/
+/*========================================*/
+
+@media screen and (max-width:768px) {
+
+
+    /*==========youtube動画非表示==========*/
+    #mainvisualText .conversion {
+        display: block;
+        animation: fadeIn 5s ease 0s 1 normal;
+        -webkit-animation: fadeIn 5s ease 0s 1 normal;
+        z-index: 15;
+    }
+    
+        /*====================*/
+    /*----- banners -----*/
+    /*====================*/
+
+    #banners {
+        display: block;
+        margin: 15px auto;
+    }
+
+    #banners p {
+        margin-top: 10px;
+    }
+
+
+}
+
+@media screen and (max-width: 480px) {
+
+
+    /*====================*/
+    /*----- header -----*/
+    /*====================*/
+
+    /*====================*/
+    /*-----mainVisual #signature -----*/
+    /*====================*/
+    #signature {
+        width: 60%;
+        position: absolute;
+        top: 40%;
+        left: 20%;
+    }
+
+
+
+
+
+}
+
+/*========================================*/
+/*----------メディアクエリmax-width480pxここまで----------*/
+/*========================================*/
+
+
+/*==========ハンバーガー対策==========*/
+@media screen and (min-width: 481px) {
+    #headerContainer nav {
+        display: block !important;
+    }
+}
+
+/*==========ハンバーガー対策==========*/

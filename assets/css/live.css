@@ -1,0 +1,180 @@
+@charset "UTF-8";
+
+/*========================================*/
+/*----------#main部分余白と広さの設定と見出し設定----------*/
+/*========================================*/
+
+#main {
+    padding-top: 50px;
+}
+
+#mainContainer {
+    width: 95%;
+}
+
+#mainContainer h2 {
+    font-size: 3.4rem;
+    margin-bottom: 20px
+}
+
+
+/*========================================*/
+/*----------#live ここから----------*/
+/*========================================*/
+
+#live {
+    margin-bottom: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+/*==========LIVEフレックスボックス設定==========*/
+
+/*----------全体にリンクする設定----------*/
+
+#live .liveFlex a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+
+/*----------ライブ詳細 通常時背面----------*/
+.liveFlex a .liveBack {
+    background-color: #6094bb;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 8;
+}
+
+.liveFlex a .liveBack .liveBacktext {
+    position: relative;
+    top: 30%;
+    color: #fff;
+    line-height: 2;
+    font-size: 1.4rem;
+}
+
+
+
+
+
+/*----------LIVEの大文字 通常時前面----------*/
+.liveFlex a .liveFront {
+    background-color: #fff;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 9;
+    transition: .2s;
+}
+
+.liveFlex a .liveFront p {
+    position: relative;
+    font-size: 20rem;
+    color: #6094bb;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/*==========hoverでライブ詳細が前面に出る設定==========*/
+.liveFlex a:hover .liveFront {
+    opacity: 0;
+}
+
+
+
+/*========================================*/
+/*----------ページ開いた際のアニメーション----------*/
+/*========================================*/
+
+.liveFlex a .hoverFade {
+    animation: fadeinout 3s ease 1s 1 normal;
+}
+
+
+@keyframes fadeinout {
+    
+    0% {opacity: 1}
+    
+    50% {
+        opacity: 0;
+    }
+    
+    100%{
+        opacity:1;
+    }
+}
+
+@-webkit-keyframes fadeinout {
+    
+    0% {opacity: 1}
+    
+    50% {
+        opacity: 0;
+    }
+    
+    100%{
+        opacity:1;
+    }
+}
+
+
+
+/*========================================*/
+/*----------メディアクエリ設定 小さいサイズから----------*/
+/*========================================*/
+
+/*==========320px〜768pxの設定==========*/
+@media screen and (min-width: 320px) {
+
+    #live {
+        margin-bottom: 50px;
+    }
+
+    /*==========LIVEフレックスボックス設定==========*/
+    #live .liveFlex {
+        flex-basis: 50%;
+        height: 35vh;
+    }
+    .liveFlex a .liveFront {
+        font-size: 10rem;
+    }
+}
+
+/*==========769px〜==========*/
+@media screen and (min-width: 769px) {
+
+    #live .liveFlex {
+        flex-basis: 25%;
+        height: 70vh;
+    }
+    .liveFlex a .liveBack .liveBacktext {
+        top: 45%;
+        transform: translateY(-50%);
+        font-size: 1.6rem;
+    }
+    .liveFlex a .liveFront p {
+        font-size: 20rem;
+    }
+}
+
+
+/*==========768px以下でTOUR大文字非表示==========*/
+@media screen and (max-width:768px) {
+    
+    .liveFront {
+        display: none;
+    }
+    .liveFlex a .liveBack {
+        background: #fff;
+        border: 1px solid #6094bb;
+    }
+    .liveFlex a .liveBack .liveBacktext {
+        color: #6094bb;
+    }
+    
+}

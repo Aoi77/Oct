@@ -41,6 +41,7 @@ header {
     position: relative;
     z-index: 6;
     max-width: 1920px;
+    margin: 0 auto;
     min-height: 400px;
     background: url(../images/home/mainVisual2.jpg) center top;
     background-size: cover;
@@ -131,13 +132,51 @@ header {
     color: #fff;
     text-shadow: 0px 2px 2px #333;
     letter-spacing: 2px;
+    line-height: 1.5;
 }
 
 #mainvisualText .conversion {
     margin-top: 20px;
     /*----------768px以上では非表示----------*/
 }
-#mainvisualText .conversion a{
+
+
+/*---------- ホバー時エフェクト ----------*/
+#mainvisualText .conversion a {
+    display: block;
+    padding: 10px;
+    position: relative;
+}
+
+.conversion a::before,
+.conversion a::after {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -1px;
+    width: 0;
+    height: 0;
+    transition: .3s;
+    z-index: 2;
+    border: 1px solid transparent;
+}
+
+.conversion a:hover::before,
+.conversion a:hover::after {
+    width: 100%;
+    height: 100%;
+}
+
+.conversion a:hover::before {
+    border-top-color: #fff;
+    border-right-color: #fff;
+    transition: width .3s, height .3s .3s;
+}
+
+.conversion a:hover::after {
+    border-bottom-color: #fff;
+    border-left-color: #fff;
+    transition: height .3s, width .3s .3s;
 }
 
 /*====================*/
@@ -221,12 +260,12 @@ header {
     /*==========youtube動画非表示==========*/
     #mainvisualText .conversion {
         display: block;
-        animation: fadeIn 5s ease 0s 1 normal;
-        -webkit-animation: fadeIn 5s ease 0s 1 normal;
+        animation: fadeIn 4s ease 0s 1 normal;
+        -webkit-animation: fadeIn 4s ease 0s 1 normal;
         z-index: 15;
     }
-    
-        /*====================*/
+
+    /*====================*/
     /*----- banners -----*/
     /*====================*/
 

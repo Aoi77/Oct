@@ -11,6 +11,8 @@
 #visual {
     background: url(../images/home/mainVisual.jpg) center top;
     background-size: cover;
+    max-width: 1920px;
+    margin: auto;
 
 }
 
@@ -34,7 +36,8 @@
 #contact {}
 
 #contact a {
-    color: #fff;
+    color: #333;
+    text-decoration: underline;
 }
 
 #contact a:hover {
@@ -43,7 +46,6 @@
 
 #contact p {
     margin: 50px auto;
-    text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.5);
 
 }
 
@@ -55,7 +57,6 @@
 
 footer {
     margin: 0 auto;
-    max-width: 1920px;
 }
 
 /*========================================*/

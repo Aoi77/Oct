@@ -82,6 +82,7 @@
 /*==========#sharesマージン設定==========*/
 
 #shares {
+    padding-bottom: 25px;
     margin: 20px auto 0;
 }
 
